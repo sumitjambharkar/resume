@@ -13,17 +13,6 @@ const SignUp = () => {
       console.log(email,password,confirmPassword);
   }
   
-  const google = async()=> {
-     try {
-       window.open("https://backend-resume-zlrr.onrender.com/auth/google","_self")
-     } catch (error) {
-      console.log(error);
-     }
-  }
-
-
-
-
   return (
     <section className="w-full text-gray-600 body-font relative flex justify-center items-center h-screen">
     <form onSubmit={sign} className="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full md:mt-0 relative z-10 shadow-md mx-auto">
@@ -75,12 +64,7 @@ const SignUp = () => {
     <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
       Sign Up
     </button>
-  
-    <div className='flex justify-center mt-4'>
-    <p onClick={google} className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-      Sign Up With Google
-    </p>
-    </div>
+
     <p className="text-md text-center text-gray-500 mt-3"><Link to="/login">Account Already Created ! Please Login</Link></p>
   </form>
 </section>

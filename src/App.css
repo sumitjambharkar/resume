@@ -9,10 +9,17 @@
   cursor: pointer;
   flex-wrap: wrap;
 }
+.main_footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
 .con {
   display: flex;
   justify-content: center;
-  height: 100vh;
+
 }
 .head_title {
   margin: 44px 0px 44px 0;

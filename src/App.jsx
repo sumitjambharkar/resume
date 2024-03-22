@@ -19,9 +19,11 @@ const App = () => {
   
   return (
     <LoadingOverlay
+      
       active={loading}
       spinner
       text='Loading your content...'
+      
     >
     <Router>
       <Navbar/>

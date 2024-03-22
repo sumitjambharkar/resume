@@ -9,6 +9,10 @@
   cursor: pointer;
   flex-wrap: wrap;
 }
+.css-e7nvmg-LoadingOverlayWrapperBase {
+  position: relative;
+  height: 100vh;
+}
 .main_footer {
   left: 0;
   bottom: 0;

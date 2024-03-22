@@ -7,9 +7,10 @@ import Footer from './components/Footer';
 import Resume from './components/Resume';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
-import LoadingOverlay from 'react-loading-overlay-ts';
+
+
 const App = () => {
-  const [loading,setLoading] = useState(true)
+  
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,13 +19,6 @@ const App = () => {
   }, [])
   
   return (
-    <LoadingOverlay
-      
-      active={loading}
-      spinner
-      text='Loading your content...'
-      
-    >
     <Router>
       <Navbar/>
       <Routes>
@@ -35,7 +29,6 @@ const App = () => {
       </Routes>
       <Footer/>
     </Router>
-    </LoadingOverlay>
   )
 }
 

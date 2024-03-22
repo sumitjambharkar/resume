@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Load from "../assets/loader.gif"
 
 
 
@@ -8,13 +9,14 @@ import { Link } from 'react-router-dom';
 export default function Home() {
 
   const [resume, setResume] = useState([])
-  const [loading,setLoading] = useState(false)
+  const [loading,setLoading] = useState(true)
  
 
   const getData = async () => {
     try {
       const result = await axios.get("https://backend-resume-zlrr.onrender.com/show-resume")
       setResume(result.data);
+      setLoading(false)
     } catch (error) {
       console.log(error);
     }
@@ -56,7 +58,11 @@ export default function Home() {
 
 
   
-
+  if (loading) {
+    return <div className='loading'>
+      <img width={100} src={Load} alt="log" />
+    </div>
+  }
 
 
 

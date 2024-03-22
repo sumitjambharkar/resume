@@ -2,17 +2,20 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Load from "../assets/loader.gif";
 
 const Resume = () => {
   const params = useParams()
   console.log(params.id);
     const editorRef = useRef(null);
   const [text, setText] = useState("")
+  const [loading,setLoading] = useState(true)
 
   const getData = async () => {
     try {
       const result = await axios.get(`https://backend-resume-zlrr.onrender.com/single-resume/${params.id}`)
       setText(result.data.content)
+      setLoading(false)
     } catch (error) {
       console.log(error);
     }
@@ -21,6 +24,12 @@ const Resume = () => {
   useEffect(() => {
     getData()
   }, [params.id])
+
+  if (loading) {
+    return <div className='loading'>
+      <img width={100} src={Load} alt="log" />
+    </div>
+  }
 
   
   return (

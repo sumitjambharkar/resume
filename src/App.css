@@ -9,9 +9,13 @@
   cursor: pointer;
   flex-wrap: wrap;
 }
-.css-e7nvmg-LoadingOverlayWrapperBase {
-  position: relative;
+.loading {
+  
   height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 .main_footer {
   left: 0;
